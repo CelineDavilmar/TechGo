@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog4Us</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</header>
+
+<body>
+    <div>
+
+        <header>
+            <h1>
+                <a class="dev" href="/">Blog Site!</a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
+                <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
+                <a href="/login">login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <div>
+            {{#if loggedIn}}
+            <script src="/javascript/logout.js"></script>
+            {{/if}}
+        </div>
+        <footer class="footer">
+            <a class="footer-margin" href="/">Terms</a>
+            <a class="footer-margin" href="/">Privacy Policy</a>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
