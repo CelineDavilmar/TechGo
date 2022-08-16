@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
         model: Post,
         attributes: ['title'],
         through: Vote,
-        as: 'voted_posts'
+        as: 'like_posts'
       }
     ]
   })
@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/signup', (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
